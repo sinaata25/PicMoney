@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+        android:background="@drawable/moneyback"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    app:cardCornerRadius="6dp"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/purple"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="5"
+            android:layout_weight=".1"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="26dp"
+            android:drawableLeft="@drawable/coin3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight=".9"
+            android:textColor="@color/white"
+            android:gravity="right|center"
+            android:textSize="26dp"
+            android:text="علی شکری"
+            android:fontFamily="@font/lalezarfont"
+            android:drawableRight="@drawable/pereson"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:fontFamily="@font/lalezarfont"
+    android:textColor="@color/yellow"
+    android:layout_marginBottom="20dp"
+    android:textSize="70dp"
+    android:text="وین مانی"
+    android:layout_marginHorizontal="20dp"
+    android:gravity="center"
+    android:background="@drawable/cardstyle10"
+    android:layout_height="wrap_content"/>
+<!--<LinearLayout
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/star_img"
+        android:src="@drawable/starvector"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>-->
+
+<Button
+    android:layout_width="240dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="8dp"
+    android:id="@+id/btn_listgames"
+    android:background="@drawable/btn_style_1"
+    android:layout_marginTop="15dp"
+    android:drawableRight="@drawable/ic_pla"
+    android:fontFamily="@font/font1font"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    android:text="لیست بازی ها"
+    />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="110dp"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="4dp"
+        app:cardBackgroundColor="@color/purple"
+        android:layout_height="150dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/chestopen1"
+            android:id="@+id/sandogh_home"
+            android:background="@drawable/cardstyle6"
+            android:padding="4dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="24dp"
+           android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="گنج روزانه"
+            android:fontFamily="@font/lalezarfont"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="110dp"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="4dp"
+        app:cardBackgroundColor="@color/purple"
+        android:layout_height="150dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/video1"
+                android:id="@+id/video"
+                android:background="@drawable/cardstyle4"
+                android:padding="4dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="تماشای ویدیو"
+                android:fontFamily="@font/lalezarfont"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="110dp"
+        android:layout_margin="4dp"
+        app:cardCornerRadius="6dp"
+        app:cardBackgroundColor="@color/purple"
+        android:layout_height="150dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/offer"
+                android:padding="4dp"
+                android:background="@drawable/cardstyle9"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="آفر های ویژه"
+                android:fontFamily="@font/lalezarfont"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+
+
+
+</LinearLayout>

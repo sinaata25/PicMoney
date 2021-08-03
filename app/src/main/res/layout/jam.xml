@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/moneyback"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        app:cardCornerRadius="8dp"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:background="@drawable/cardstyle9"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/darklightgreen"
+                app:cardCornerRadius="8dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lalezarfont"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:drawableRight="@drawable/ic_money1"
+                    android:text="1000 تومان"
+                    android:textSize="28dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:layout_marginTop="12dp"
+                android:id="@+id/editTextNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="16"
+                android:fontFamily="@font/lalezarfont"
+                android:gravity="center"
+                android:hint="شماره کارت خود را وارد کنید"
+                android:padding="5dp"
+                android:background="@drawable/cardstyle7"
+                android:inputType="number" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:text="واریز به حساب"
+                android:fontFamily="@font/lalezarfont"
+                android:textSize="30dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/cardstyle8"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/cardstyle6"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/cardstyle4"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:padding="3dp"
+                    android:fontFamily="@font/font1font"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:text="تبدیل سکه به پول" />
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/exchange"
+                    android:layout_height="35dp"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/cardstyle3"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:padding="3dp"
+                    android:fontFamily="@font/font1font"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:text="0" />
+                <ImageView
+                    android:layout_width="35dp"
+                    android:src="@drawable/coin"
+                    android:padding="2dp"
+                    android:layout_height="35dp"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+</LinearLayout>
