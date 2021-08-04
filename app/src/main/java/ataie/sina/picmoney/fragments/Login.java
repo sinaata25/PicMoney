@@ -42,7 +42,7 @@ public class Login extends Fragment {
     EditText verification_text,phone_txt,password_txt;
     TextView new_account,again;
     LinearLayout layout_again; Map<String,String> param;
-    int can_send=1;
+    int can_send=1;Timer timer;
     Button send_verif_btn;
     String verif_code;int counter=60;
     @Override
@@ -76,6 +76,18 @@ public class Login extends Fragment {
                 }
             }
         });
+        ///////////////agan send code button
+
+         layout_again.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 if(can_send==1 && counter==0) {
+                     counter = 60;
+                     Ask_server();
+                 }
+             }
+         });
+
     }
 
     private void Ask_server(){
@@ -90,7 +102,7 @@ public class Login extends Fragment {
                     send_verif_btn.setText("تایید");
                     send_verif_btn.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.cardstyle9));
                     layout_again.setVisibility(View.VISIBLE);
-                   // Timer_again();
+                    Timer_again();
                     send_verif_btn.setContentDescription("1");
                     Ask_server_1();
                 }
@@ -183,22 +195,29 @@ public class Login extends Fragment {
 
 
     void Timer_again(){
-
-        Timer timer=new Timer();
+        timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                new Handler().post(new Runnable() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        counter--;
-                        again.setText(counter);
+                        if(counter!=0){
+                            counter--;
+                            int min=counter/60;
+                            int sec=counter%60;
+                            again.setText("0"+min+":"+sec);
+                        }else {
+                            timer.purge();
+                            timer.cancel();
+                            can_send=1;
+                            again.setText("");
+                        }
+
                     }
                 });
             }
-        },1000,1000);
-
-
+        }, 1000,1000);
     }
 
 

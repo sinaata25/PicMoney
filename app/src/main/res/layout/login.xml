@@ -82,19 +82,20 @@
         <TextView
             android:layout_width="match_parent"
             android:text="1:00"
-            android:gravity="right"
-            android:layout_weight=".7"
+            android:gravity="right|center"
+            android:layout_weight=".5"
             android:id="@+id/send_again"
+            android:drawableRight="@drawable/refresh_black"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/lalezarfont"
             android:layout_height="wrap_content"/>
         <TextView
             android:layout_width="match_parent"
             android:text="ارسال مجدد کد تایید"
-            android:gravity="left"
+            android:gravity="left|center"
             android:paddingLeft="8dp"
             android:id="@+id/again"
-            android:layout_weight=".3"
+            android:layout_weight=".5"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/lalezarfont"
             android:layout_height="wrap_content"/>
