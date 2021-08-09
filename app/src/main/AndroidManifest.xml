@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ataie.sina.picmoney">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PicMoney"
         android:usesCleartextTraffic="true"
-        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
-        >
-        <activity android:name=".Game"></activity>
-        <activity android:name=".Login_Logup" >
+        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        <activity android:name=".Splash_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Game" />
+        <activity android:name=".Login_Logup"></activity>
         <activity android:name=".List_Game" />
         <activity android:name=".MainActivity"></activity>
     </application>

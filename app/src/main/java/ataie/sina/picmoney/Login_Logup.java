@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import ataie.sina.picmoney.adapters.NavAdapter;
@@ -20,9 +23,11 @@ public class Login_Logup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_logup);
-        SetupViews();
-        Handle_Bottom_Navs();
+/*        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        int is_login = sharedPref.getInt(getString(R.string.SPLASH),0);*/
+            setContentView(R.layout.login_logup);
+            SetupViews();
+            Handle_Bottom_Navs();
 
 
     }

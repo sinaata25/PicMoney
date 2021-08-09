@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PicMoney</string>
+    <string name="SPLASH">is_login</string>
 </resources>

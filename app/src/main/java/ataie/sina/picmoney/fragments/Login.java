@@ -1,6 +1,8 @@
 package ataie.sina.picmoney.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -33,6 +35,7 @@ import java.util.TimerTask;
 
 import ataie.sina.picmoney.MainActivity;
 import ataie.sina.picmoney.R;
+import ataie.sina.picmoney.Splash_Activity;
 import ataie.sina.picmoney.Statics;
 import ataie.sina.picmoney.Urls;
 import ataie.sina.picmoney.models.Model_Current_User;
@@ -64,7 +67,14 @@ public class Login extends Fragment {
                                 Ask_server();
                     }else {
                             if(verification_text.getText().toString().equals(verif_code)){
-                                Intent intent=new Intent(getContext(), MainActivity.class);
+/*                                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putInt("is_login",1);
+                                editor.apply();*/
+                                SharedPreferences.Editor editor = getContext().getSharedPreferences("shared",Context.MODE_PRIVATE).edit();
+                                editor.putInt("is_login",1);
+                                editor.apply();
+                                Intent intent=new Intent(getContext(), Splash_Activity.class);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(getContext(),"کد تایید وارد شده اشتباه است",Toast.LENGTH_SHORT).show();
@@ -179,8 +189,17 @@ public class Login extends Fragment {
 
     void Set_Model_Function(String response){
     String[] splited=response.split("/");
+/*        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("username",splited[1]);
+        editor.putString("number",splited[3]);
+        editor.apply();*/
+        SharedPreferences.Editor editor = getContext().getSharedPreferences("shared",Context.MODE_PRIVATE).edit();
+        editor.putString("username",splited[1]);
+        editor.putString("number",splited[3]);
+        editor.apply();
         verif_code=splited[0];
-        Model_Current_User.username=splited[1];
+/*        Model_Current_User.username=splited[1];
         Model_Current_User.password=splited[2];
         Model_Current_User.number=splited[3];
         Model_Current_User.coin=splited[4];
@@ -189,7 +208,7 @@ public class Login extends Fragment {
         Model_Current_User.score=splited[7];
         Model_Current_User.score_gozine=splited[8];
         Model_Current_User.score_speed=splited[9];
-        Model_Current_User.mode=splited[10];
+        Model_Current_User.mode=splited[10];*/
     }
 
 

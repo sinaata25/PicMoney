@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:text="ثبت نام"
                 android:gravity="center"
+                android:textSize="20dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/darkgreen"
                 android:fontFamily="@font/lalezarfont"
@@ -33,10 +34,10 @@
                 android:layout_width="match_parent"
                 android:src="@drawable/money"
                 android:layout_marginBottom="10dp"
-                android:layout_height="200dp"/>
+                android:layout_height="100dp"/>
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/phone_logup"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,7 +51,7 @@
                 android:inputType="phone" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName1"
+                android:id="@+id/username_logup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -65,7 +66,7 @@
                 android:hint="نام کاربری" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/newpass"
                 android:layout_width="wrap_content"
                 android:background="@drawable/cardstyle4"
                 android:textSize="25dp"
@@ -76,15 +77,43 @@
                 android:hint="رمز عبور جدید"
                 android:fontFamily="@font/font1"
                 android:inputType="textPassword" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/sen_again_layout_logup"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="1:00"
+                    android:gravity="right|center"
+                    android:layout_weight=".5"
+                    android:id="@+id/send_again_logup"
+                    android:drawableRight="@drawable/refresh_black"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/lalezarfont"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="ارسال مجدد کد تایید"
+                    android:gravity="left|center"
+                    android:paddingLeft="8dp"
+                    android:layout_weight=".5"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/lalezarfont"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/verif_text_logup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:ems="10"
                 android:gravity="center"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:fontFamily="@font/font1"
                 android:inputType="textPersonName"
                 android:hint="کد تایید" />
@@ -93,6 +122,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:text="ارسال کد تایید"
+                android:id="@+id/send_verif_logup"
+                android:contentDescription="0"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/lalezarfont"
                 android:background="@drawable/btn_style_1"

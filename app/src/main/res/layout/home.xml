@@ -51,8 +51,11 @@
             android:textSize="26dp"
             android:text="علی شکری"
             android:fontFamily="@font/lalezarfont"
-            android:drawableRight="@drawable/pereson"
             android:layout_height="match_parent"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:src="@drawable/person1"
+            android:layout_height="50dp"/>
 
 
     </LinearLayout>
