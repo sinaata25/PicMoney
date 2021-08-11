@@ -37,6 +37,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="5"
+            android:id="@+id/coin_show"
             android:layout_weight=".1"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -46,6 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight=".9"
+            android:id="@+id/username_show"
             android:textColor="@color/white"
             android:gravity="right|center"
             android:textSize="26dp"

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,20 +32,20 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import ataie.sina.picmoney.MainActivity;
+import ataie.sina.picmoney.Login_Logup;
 import ataie.sina.picmoney.R;
 import ataie.sina.picmoney.Splash_Activity;
 import ataie.sina.picmoney.Statics;
 import ataie.sina.picmoney.Urls;
-import ataie.sina.picmoney.models.Model_Current_User;
 
 public class Login extends Fragment {
     View view;
     EditText verification_text,phone_txt,password_txt;
-    TextView new_account,again;
+    TextView new_account,again,new_account_textview;
     LinearLayout layout_again; Map<String,String> param;
     int can_send=1;Timer timer;
     Button send_verif_btn;
+    public static    Callback_Logup callback_logup;
     String verif_code;int counter=60;
     @Override
     @Nullable
@@ -97,6 +96,15 @@ public class Login extends Fragment {
                  }
              }
          });
+         ///////////////new acoount
+        new_account_textview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(callback_logup!=null){
+                    callback_logup.onRegistered();
+                }
+            }
+        });
 
     }
 
@@ -183,17 +191,12 @@ public class Login extends Fragment {
         phone_txt=view.findViewById(R.id.editTextPhone_login);
         again=view.findViewById(R.id.send_again);
         layout_again=view.findViewById(R.id.sen_again_layout);
-
+        new_account_textview=view.findViewById(R.id.new_account_textview);
     }
 
 
     void Set_Model_Function(String response){
     String[] splited=response.split("/");
-/*        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username",splited[1]);
-        editor.putString("number",splited[3]);
-        editor.apply();*/
         SharedPreferences.Editor editor = getContext().getSharedPreferences("shared",Context.MODE_PRIVATE).edit();
         editor.putString("username",splited[1]);
         editor.putString("number",splited[3]);
@@ -243,6 +246,9 @@ public class Login extends Fragment {
 
 
 
+    public interface Callback_Logup{
+        void onRegistered();
+    }
 
 
 

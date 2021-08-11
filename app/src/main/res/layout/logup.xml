@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:text="ثبت نام"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/darkgreen"
