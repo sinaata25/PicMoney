@@ -24,7 +24,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:textSize="30dp"
-                android:text=" 3"
+                android:text=" 0"
+                android:id="@+id/show_coin_list"
                 android:fontFamily="@font/font1font"
                 android:gravity="center"
                 android:drawableLeft="@drawable/coin3"
@@ -227,12 +228,12 @@
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
                         android:padding="10dp"
-                        android:background="@drawable/cardstyle7"
+                        android:background="@drawable/cardstyle4"
                         android:layout_height="120dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@drawable/cupsilver"
+                            android:src="@drawable/picture"
                             android:layout_weight=".4"
                             android:layout_height="match_parent"/>
                         <TextView
@@ -242,7 +243,7 @@
                             android:fontFamily="@font/lalezarfont"
                             android:gravity="center"
                             android:paddingRight="20dp"
-                            android:text="لیگ ویژه"
+                            android:text="لیگ حدس تصویر"
                             android:layout_height="match_parent"/>
 
                     </LinearLayout>
@@ -254,7 +255,7 @@
                         android:orientation="horizontal"
                         android:padding="10dp"
                         android:gravity="center"
-                        android:background="@drawable/cardstyle7"
+                        android:background="@drawable/cardstyle4"
                         android:layout_height="70dp">
 
                         <LinearLayout
@@ -323,7 +324,7 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@drawable/cup"
+                            android:src="@drawable/choose"
                             android:layout_weight=".4"
                             android:layout_height="match_parent"/>
                         <TextView
@@ -333,7 +334,7 @@
                             android:gravity="center"
                             android:paddingRight="20dp"
                             android:textColor="@color/white"
-                            android:text="لیگ طلایی"
+                            android:text="لیگ چهار گزینه ای"
                             android:layout_height="match_parent"/>
 
                     </LinearLayout>
@@ -412,7 +413,7 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:src="@drawable/cupdiamond"
+                            android:src="@drawable/stopwatch"
                             android:layout_weight=".4"
                             android:layout_height="match_parent"/>
                         <TextView
@@ -422,7 +423,7 @@
                             android:gravity="center"
                             android:textColor="@color/rocky"
                             android:paddingRight="20dp"
-                            android:text="لیگ الماس"
+                            android:text="لیگ سرعتی            "
                             android:layout_height="match_parent"/>
 
                     </LinearLayout>
