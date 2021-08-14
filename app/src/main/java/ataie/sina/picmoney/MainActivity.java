@@ -26,6 +26,7 @@ import ataie.sina.picmoney.fragments.Credit;
 import ataie.sina.picmoney.fragments.Home;
 import ataie.sina.picmoney.fragments.Jam;
 import ataie.sina.picmoney.fragments.Setting;
+import ataie.sina.picmoney.fragments.Wanna_Exit;
 
 public class MainActivity extends AppCompatActivity  {
     ViewPager viewPager;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         Setup_Views();
         Handle_Bottom_Navs();
+
 
     }
 
@@ -69,11 +71,6 @@ void Set_Tablayout_Icons(){
     tabLayout.getTabAt(3).setIcon(R.drawable.shopping);
     tabLayout.getTabAt(4).setIcon(R.drawable.wallet);
 }
-
-
-
-
-
 
 
 }

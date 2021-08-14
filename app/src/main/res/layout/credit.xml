@@ -46,7 +46,7 @@
 
             <EditText
                 android:layout_marginTop="12dp"
-                android:id="@+id/editTextNumber"
+                android:id="@+id/cardnum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
@@ -57,10 +57,26 @@
                 android:background="@drawable/cardstyle7"
                 android:inputType="number" />
 
+            <EditText
+                android:layout_marginTop="12dp"
+                android:id="@+id/money_want"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="16"
+                android:fontFamily="@font/lalezarfont"
+                android:gravity="center"
+                android:hint="مقدار مبلغ درخواستی را وارد کنید(تومان)"
+                android:padding="5dp"
+                android:background="@drawable/cardstyle5"
+                android:inputType="number" />
+
+
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_marginTop="12dp"
                 android:text="واریز به حساب"
+                android:id="@+id/send_money"
                 android:fontFamily="@font/lalezarfont"
                 android:textSize="30dp"
                 android:layout_marginHorizontal="20dp"

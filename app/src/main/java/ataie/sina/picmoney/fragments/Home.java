@@ -96,4 +96,8 @@ public class Home extends Fragment {
         super.onStart();
         sandogh_gifts.startAnimation(scaleAnimation);
     }
+
+
+
+
 }
