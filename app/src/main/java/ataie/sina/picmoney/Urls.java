@@ -9,4 +9,5 @@ public class Urls {
     public static String get_splash_info="http://192.168.1.105/picomoney/get_info.php";
     public static String url_change_password="http://192.168.1.105/picomoney/change_pass.php";
     public static String url_req_money="http://192.168.1.105/picomoney/req_money.php";
+    public static String url_money_coin="http://192.168.1.105/picomoney/money_coin.php";
 }

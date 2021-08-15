@@ -106,6 +106,7 @@
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
+                android:id="@+id/money_coin"
                 android:orientation="horizontal"
                 android:background="@drawable/cardstyle10"
                 android:layout_height="match_parent">

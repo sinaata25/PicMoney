@@ -8,4 +8,5 @@ public class Statics {
    public static String get_info="asd$#gdf14#tga@#fdg5s@323a";
    public static String change_pass="3#2@gh#j86@g89oln0912@@#";
    public static String key_reqmoney="123gsd*#r@#fhj75913##@ev1295";
+   public static String key_money_coin="3h7*#fb592@***###yh345dsg809";
 }

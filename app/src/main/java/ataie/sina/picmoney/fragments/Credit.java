@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class Credit extends Fragment {
     Button bardasht;
     View view;
     String time;
+   LinearLayout coin_money;
     @Override
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -57,8 +59,9 @@ public class Credit extends Fragment {
                     int money_wanted = Integer.parseInt(money_want.getText().toString());
                 int current_money = Integer.parseInt(Model_Current_User.money);
                 if (Integer.parseInt(Model_Current_User.money) >= 30000) {
-                    if (money_wanted > current_money || money_wanted <= 0) {
-                        Toast.makeText(getContext(), "مبلغ وارد شده مجاز نمیباشد", Toast.LENGTH_SHORT).show();
+                    if (money_wanted > current_money ||  money_wanted<10000) {
+                        Dialog_Info dialog_info=new Dialog_Info();
+                        dialog_info.show(getParentFragmentManager(),"مبلغ وارد شده مجاز نمیباشد");
                     } else {
                         Req_Money();
                     }
@@ -66,10 +69,32 @@ public class Credit extends Fragment {
                 } else {
                     Dialog_Low_Money dialog_low_money = new Dialog_Low_Money();
                     dialog_low_money.show(getParentFragmentManager(), "");
+
                 }
             }
             }
         });
+
+//////////////////////////////////
+
+        coin_money.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+        Dialog_Coin_Money dialog_coin_money=new Dialog_Coin_Money();
+        dialog_coin_money.show(getParentFragmentManager(),"");
+            }
+        });
+
+///////////////////////////////////
+
+        Dialog_Coin_Money dialog_coin_money=new Dialog_Coin_Money();
+        dialog_coin_money.callback_changed=new Dialog_Coin_Money.Callback_Changed() {
+            @Override
+            public void changed() {
+                coin.setText(Model_Current_User.coin);
+                money.setText(Model_Current_User.money);
+            }
+        };
 
 
 
@@ -89,7 +114,8 @@ public class Credit extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(),"خطا در اتصال به سرور",Toast.LENGTH_SHORT).show();
+                Dialog_Info dialog_info=new Dialog_Info();
+                dialog_info.show(getParentFragmentManager(),"خطا در اتصال به سرور");
             }
         }){//
             @Override
@@ -127,6 +153,7 @@ public class Credit extends Fragment {
         bardasht=view.findViewById(R.id.send_money);
         carnum=view.findViewById(R.id.cardnum);
         money_want=view.findViewById(R.id.money_want);
+        coin_money=view.findViewById(R.id.money_coin);
 
     }
 
