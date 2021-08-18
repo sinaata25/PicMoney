@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -19,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -63,6 +65,7 @@ public class Game extends AppCompatActivity {
     ImageView imageView;
     TextView one,two,three,four,tasvirx;
     ProgressBar progressBar;
+    int javab_selected=0;
     MediaPlayer mediaPlayer;
     RoundedProgressBar progress;
     Timer timer;
@@ -78,7 +81,9 @@ public class Game extends AppCompatActivity {
             setContentView(R.layout.game);
             SetupViews();
             Sets();
+            Handle_Javab();
     }
+
 
 
     private void SetupViews() {
@@ -209,8 +214,6 @@ public class Game extends AppCompatActivity {
     }
 
     void Load_image(){
-        //   Picasso.get().load(javab_image) .error(R.drawable.nowifi).into(imageView);
-        //  Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.bardasht);
         Picasso.get()
                 .load(javab_image)
                 .transform(new BlurTransformation(getApplicationContext(), 25, sampeling))
@@ -228,7 +231,7 @@ public class Game extends AppCompatActivity {
                 });
     }
 
-    void Start_Game(){
+        void Start_Game (){
         mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.tic);
         mediaPlayer.start();
      timer=new Timer();
@@ -239,30 +242,24 @@ public class Game extends AppCompatActivity {
                 @Override
                 public void run() {
                     if(progress_percent==80){
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            mediaPlayer.setPlaybackParams(mediaPlayer.getPlaybackParams().setSpeed((float) 1.1));
-                        }
+                        Handle_Speed((float) 1.2);
                         progress.setProgressDrawableColor(Color.rgb(0,255,0));
                     }else if (progress_percent==50){
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            mediaPlayer.setPlaybackParams(mediaPlayer.getPlaybackParams().setSpeed((float) 1.5));
-                        }
+                    Handle_Speed((float) 1.5);
                         progress.setProgressDrawableColor(Color.rgb(255,255,0));
                     }else if (progress_percent==30){
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            mediaPlayer.setPlaybackParams(mediaPlayer.getPlaybackParams().setSpeed((float) 2.3));
-                        }
+                        Handle_Speed((float) 2.3);
                         progress.setProgressDrawableColor(Color.rgb(128,0,0));
                     }
                     else if (progress_percent==10){
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            mediaPlayer.setPlaybackParams(mediaPlayer.getPlaybackParams().setSpeed(3));
-                        }
+                        Handle_Speed((float) 2.8);
                         progress.setProgressDrawableColor(Color.rgb(0,0,0));
                     }else if (progress_percent==0){
-                        timer.cancel();
-                        timer.purge();
-                        mediaPlayer.release();
+                        Go_To_Show(-1);
+                        if(mediaPlayer!=null){
+                            mediaPlayer.release();
+                        }
+
                     }
                     progress.setProgressPercentage(progress_percent,false);
                     progress_percent-=.5;
@@ -273,15 +270,121 @@ public class Game extends AppCompatActivity {
 }
 
 
+        void Handle_Speed(float s){
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                mediaPlayer.setPlaybackParams(mediaPlayer.getPlaybackParams().setSpeed(s));
+            }
+        }catch (Exception e){
+            Log.i("TAG", "Handle_Speed: "+e.getMessage());
+        }
+
+        }
+
+
+
+
+    private void Handle_Javab() {
+        //////////////////////////////1
+     one.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        if(javab_selected==0){
+            javab_selected=1;
+           String this_gozine= one.getText().toString();
+           if(this_gozine.equals(javab_name)){
+                    Go_To_Show(1);
+           }else {
+               Go_To_Show(0);
+           }
+        }
+    }
+    });
+     //////////////////////////////////2
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(javab_selected==0){
+                    javab_selected=2;
+                    String this_gozine= two.getText().toString();
+                    if(this_gozine.equals(javab_name)){
+                        Go_To_Show(1);
+                    }else {
+                        Go_To_Show(0);
+                    }
+                }
+            }
+        });
+        ///////////////////////////////////3
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(javab_selected==0){
+                    javab_selected=3;
+                    String this_gozine= three.getText().toString();
+                    if(this_gozine.equals(javab_name)){
+                        Go_To_Show(1);
+                    }else {
+                        Go_To_Show(0);
+                    }
+                }
+            }
+        });
+        ///////////////////////////////////4
+       four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(javab_selected==0){
+                    javab_selected=4;
+                    String this_gozine=four.getText().toString();
+                    if(this_gozine.equals(javab_name)){
+                        Go_To_Show(1);
+                    }else {
+                        Go_To_Show(0);
+                    }
+                }
+            }
+        });
+        ///////////////////////////////////
+
+
+    }
 
 
 
 
 
 
+        void Go_To_Show(int vaziat){
+            if(mediaPlayer!=null){
+                mediaPlayer.release();
+            }
+            timer.cancel();
+            timer.purge();
+        if(vaziat==1){
+            Intent intent=new Intent(getApplicationContext(),Win_Lose.class);
+            intent.putExtra("win",1);
+            intent.putExtra("javab_name",javab_name);
+            intent.putExtra("javab_image",javab_image);
+            startActivity(intent);
+            finish();
+        }else if(vaziat==-1){
+            Intent intent=new Intent(getApplicationContext(),Win_Lose.class);
+            intent.putExtra("win",-1);
+            intent.putExtra("javab_name",javab_name);
+            intent.putExtra("javab_image",javab_image);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent=new Intent(getApplicationContext(),Win_Lose.class);
+            intent.putExtra("win",0);
+            intent.putExtra("javab_name",javab_name);
+            intent.putExtra("javab_image",javab_image);
+            startActivity(intent);
+            finish();
+        }
 
-
-
+        }
 
 
 

@@ -14,7 +14,8 @@
         android:theme="@style/Theme.PicMoney"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
-        <activity android:name=".Show_Ranks"></activity>
+        <activity android:name=".Win_Lose"></activity>
+        <activity android:name=".Show_Ranks" />
         <activity android:name=".Splash_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

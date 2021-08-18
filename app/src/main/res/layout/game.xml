@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:id="@+id/loading_page"
-        android:visibility="gone"
+        android:visibility="visible"
         android:background="@drawable/backmoney3"
         android:layout_height="match_parent">
 
