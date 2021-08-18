@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Show_Ranks">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:padding="2dp"
+        app:cardBackgroundColor="@color/teal_700"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/cardstyle7"
+           android:gravity="right"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="40"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:fontFamily="@font/lalezarfont"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="امتیاز:"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:fontFamily="@font/lalezarfont"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_height="match_parent"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="علی شکری"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:fontFamily="@font/lalezarfont"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_height="match_parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="70dp"
+                android:layout_gravity="center"
+                android:layout_height="70dp"
+                android:src="@drawable/person1"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+        </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="رتبه:40"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:fontFamily="@font/lalezarfont"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:layout_marginHorizontal="5dp"
+        app:cardBackgroundColor="@color/darkgreen"
+        android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="10dp"
+                    android:padding="2dp"
+                    app:cardBackgroundColor="@color/yellow"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="70dp"
+                            android:layout_gravity="center"
+                            android:layout_height="70dp"
+                            android:src="@drawable/person1"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="2dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="1_amirhossei.hp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/lalezarfont"
+                            android:textSize="25dp"
+                            android:textColor="@color/white"
+                            android:layout_height="match_parent"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@drawable/cardstyle7"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@drawable/cardstyle5"
+                                android:gravity="center"
+                                android:layout_weight=".5"
+                                android:layout_height="wrap_content">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_gravity="center"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/person1"
+                                    app:civ_border_color="@color/white"
+                                    app:civ_border_width="2dp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="3_alire56"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/lalezarfont"
+                                    android:textSize="25dp"
+                                    android:textColor="@color/white"
+                                    android:layout_height="match_parent"/>
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:background="@drawable/cardstyle7"
+                                android:layout_weight=".5"
+                                android:layout_height="wrap_content">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_gravity="center"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/person1"
+                                    app:civ_border_color="@color/white"
+                                    app:civ_border_width="2dp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="2_dkmon"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/lalezarfont"
+                                    android:textSize="25dp"
+                                    android:textColor="@color/white"
+                                    android:layout_height="match_parent"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</LinearLayout>

@@ -14,6 +14,7 @@
         android:theme="@style/Theme.PicMoney"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        <activity android:name=".Show_Ranks"></activity>
         <activity android:name=".Splash_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Game" />
-        <activity android:name=".Login_Logup"></activity>
+        <activity android:name=".Login_Logup" />
         <activity android:name=".List_Game" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

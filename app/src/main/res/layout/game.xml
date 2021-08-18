@@ -8,6 +8,44 @@
     android:layout_height="match_parent"
     tools:context=".Game">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/loading_page"
+        android:visibility="gone"
+        android:background="@drawable/backmoney3"
+        android:layout_height="match_parent">
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.Circle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="#DC4CAF50"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lalezarfont"
+            android:gravity="center"
+            android:text="لطفا شکیبا باشید..."
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:background="#6A1F4721"
+           android:paddingVertical="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         app:cardBackgroundColor="@color/purple"
@@ -24,18 +62,18 @@
             android:layout_height="match_parent">
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:text=" 3"
-
                 android:fontFamily="@font/lalezarfont"
                 android:gravity="center"
-                android:drawableLeft="@drawable/coin"
+                android:drawableLeft="@drawable/coin3"
                 android:layout_height="match_parent"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:textSize="30dp"
-                android:text="تصویر 4"
+                android:id="@+id/tasvirx"
+                android:text="تصویر 1"
                 android:layout_weight=".5"
                 android:fontFamily="@font/lalezarfont"
                 android:gravity="center"
@@ -47,19 +85,23 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ProgressBar
-        android:layout_marginTop="10dp"
-        android:id="@+id/progressBar"
-        android:layout_marginHorizontal="10dp"
-        style="?android:attr/progressBarStyleHorizontal"
+    <com.mackhartley.roundedprogressbar.RoundedProgressBar
+        android:id="@+id/progressBar3"
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="30dp"
+        android:visibility="visible"
+        app:rpbBackgroundColor="#8BFFC107"
+        app:rpbCornerRadius="20dp"
+        app:rpbProgressColor="#0C8111"
+        app:rpbShowProgressText="false" />
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         app:cardCornerRadius="6dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content">
 
@@ -69,11 +111,11 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="match_parent"
                 android:id="@+id/image_game"
-                android:src="@drawable/image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
                 android:padding="6dp"
-                android:layout_height="250dp"/>
+                android:src="@drawable/nowifi" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -89,6 +131,7 @@
             android:layout_width="108dp"
             android:layout_marginRight="5dp"
             android:layout_weight=".5"
+            app:cardBackgroundColor="@color/orange"
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,6 +143,7 @@
                     android:text="چنگال"
                     android:gravity="center"
                     android:padding="10dp"
+                    android:id="@+id/one"
                     android:textColor="@color/white"
                     android:fontFamily="@font/lalezarfont"
                     android:textSize="30dp"
@@ -113,6 +157,7 @@
             android:layout_width="108dp"
             android:layout_weight=".5"
             android:layout_marginLeft="5dp"
+            app:cardBackgroundColor="@color/orange"
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -124,6 +169,7 @@
                     android:text="قاشق"
                     android:textColor="@color/white"
                     android:padding="10dp"
+                    android:id="@+id/two"
                     android:gravity="center"
                     android:fontFamily="@font/lalezarfont"
                     android:textSize="30dp"
@@ -150,6 +196,7 @@
             android:layout_width="108dp"
             android:layout_marginRight="5dp"
             android:layout_weight=".5"
+            app:cardBackgroundColor="@color/orange"
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -161,6 +208,7 @@
                     android:text="ملاقه"
                     android:gravity="center"
                     android:padding="10dp"
+                    android:id="@+id/three"
                     android:textColor="@color/white"
                     android:fontFamily="@font/lalezarfont"
                     android:textSize="30dp"
@@ -174,6 +222,7 @@
             android:layout_width="108dp"
             android:layout_weight=".5"
             android:layout_marginLeft="5dp"
+            app:cardBackgroundColor="@color/orange"
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -184,6 +233,7 @@
                     android:layout_width="match_parent"
                     android:text="چاقو"
                     android:padding="10dp"
+                    android:id="@+id/four"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:fontFamily="@font/lalezarfont"

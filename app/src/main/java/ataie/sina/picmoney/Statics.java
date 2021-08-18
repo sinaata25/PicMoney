@@ -9,4 +9,6 @@ public class Statics {
    public static String change_pass="3#2@gh#j86@g89oln0912@@#";
    public static String key_reqmoney="123gsd*#r@#fhj75913##@ev1295";
    public static String key_money_coin="3h7*#fb592@***###yh345dsg809";
+   public static String key_get_hads="##fg74@#gj9503@f5466@@@vb83#341";
+   public static String key_get_num_hads="234fcoiwlfi#sg@5gea21";
 }
