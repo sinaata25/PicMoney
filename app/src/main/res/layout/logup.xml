@@ -31,11 +31,15 @@
                 android:fontFamily="@font/lalezarfont"
                 android:layout_height="wrap_content"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:src="@drawable/money"
-                android:layout_marginBottom="10dp"
-                android:layout_height="100dp"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/load_lottie"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="hi.json"
+                app:lottie_loop="true" />
 
             <EditText
                 android:id="@+id/phone_logup"

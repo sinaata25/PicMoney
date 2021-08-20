@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import ataie.sina.picmoney.fragments.Ok_Go_Game;
 import ataie.sina.picmoney.models.Model_Current_User;
 
@@ -32,7 +34,7 @@ public class List_Game extends AppCompatActivity {
         gold=findViewById(R.id.cardgold);
         diamond=findViewById(R.id.caarddiamond);
         textView_coin=findViewById(R.id.show_coin_list);
-
+        Statics.list_game=new ArrayList<>();
     }
 
 

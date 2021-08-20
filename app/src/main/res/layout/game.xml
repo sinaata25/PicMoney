@@ -12,21 +12,23 @@
         android:layout_width="match_parent"
         android:id="@+id/loading_page"
         android:visibility="visible"
-        android:background="@drawable/backmoney3"
+        android:background="@drawable/moneyback"
         android:layout_height="match_parent">
 
 
-        <com.github.ybq.android.spinkit.SpinKitView
-            android:id="@+id/spin_kit"
-            style="@style/SpinKitView.Large.Circle"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            app:SpinKit_Color="#DC4CAF50"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/load_lottie"
+            android:layout_width="291dp"
+            android:layout_height="331dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="glasshour.json"
+            app:lottie_loop="true" />
 
         <TextView
             android:id="@+id/textView3"
@@ -45,6 +47,19 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -88,7 +103,7 @@
     <com.mackhartley.roundedprogressbar.RoundedProgressBar
         android:id="@+id/progressBar3"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="30dp"
         android:visibility="visible"
@@ -113,7 +128,8 @@
             <ImageView
                 android:id="@+id/image_game"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="200dp"
                 android:padding="6dp"
                 android:src="@drawable/nowifi" />
 
@@ -247,6 +263,62 @@
 
 
 
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:id="@+id/extra_time"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/cardstyle11"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/timer"
+                android:layout_height="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:fontFamily="@font/lalezarfont"
+                android:text="زمان بیشتر"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/next_question_game"
+            android:layout_weight=".5"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/cardstyle8"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/next"
+                android:layout_height="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:fontFamily="@font/lalezarfont"
+                android:text="رد کردن"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -254,10 +326,8 @@
 
 
 
-
-
-
-
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

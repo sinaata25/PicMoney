@@ -1,5 +1,7 @@
 package ataie.sina.picmoney.models;
 
+import java.util.List;
+
 public class Model_Hads {
 
     String name1,image1,name2,image2,name3,image3,name4,image4;

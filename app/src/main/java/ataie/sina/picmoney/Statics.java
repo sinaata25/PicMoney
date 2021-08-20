@@ -1,5 +1,9 @@
 package ataie.sina.picmoney;
 
+import java.util.List;
+
+import ataie.sina.picmoney.models.Model_Hads;
+
 public class Statics {
    public static String key_login="90134A7d138F2#94$$732017s9ac";
    public static String key_login_1="9023@15##3gk84nabvn12smic";
@@ -11,4 +15,5 @@ public class Statics {
    public static String key_money_coin="3h7*#fb592@***###yh345dsg809";
    public static String key_get_hads="##fg74@#gj9503@f5466@@@vb83#341";
    public static String key_get_num_hads="234fcoiwlfi#sg@5gea21";
+   public static List<Integer>list_game;
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,10 +12,15 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ataie.sina.picmoney.models.Model_Current_User;
+import ataie.sina.picmoney.models.Model_Hads;
 
 public class Win_Lose extends AppCompatActivity {
     int win;
+    MediaPlayer mediaPlayer;
     TextView javab_dadi,show_coin_win,show_coin_lose,javab_lose,javab_win,gozaresh_win,gozaresh_lose,bazgasht_lose,next_soal_win;
     ImageView image_lose,image_win;
     CardView cardwin,lcardose;
@@ -76,21 +82,60 @@ public class Win_Lose extends AppCompatActivity {
 
 
     void Handle_Win(){
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.winsound);
+        mediaPlayer.start();
         show_coin_win.setText(Model_Current_User.coin);
         if(javab_name!=null || javab_image!=null){
             Picasso.get().load(javab_image) .error(R.drawable.nowifi).into(image_win);
         }
         javab_win.setText(javab_name);
+        ////////////////
+        gozaresh_win.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        ////////////////
+        next_soal_win.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),Game.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //////////////
+
 
     }
 
     void Handle_Lose(){
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.losesound);
+        mediaPlayer.start();
     show_coin_lose.setText(Model_Current_User.coin);
         if(javab_name!=null || javab_image!=null){
             Picasso.get().load(javab_image) .error(R.drawable.nowifi).into(image_lose);
         }
         javab_lose.setText(javab_name);
+        ///////////////
+        gozaresh_lose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        //////////////
+        bazgasht_lose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        ////////////
+
     }
+
 
 
 }

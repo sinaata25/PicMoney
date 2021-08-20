@@ -21,6 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import ataie.sina.picmoney.List_Game;
 import ataie.sina.picmoney.R;
 import ataie.sina.picmoney.models.Model_Current_User;
@@ -30,6 +32,7 @@ public class Home extends Fragment {
     View view;
     TextView coin_show,username_show;
     Button btn_list_games;
+    LottieAnimationView lottieAnimationView;
     AlphaAnimation  alphaAnimation;ScaleAnimation scaleAnimation;
     @Override
     @Nullable
@@ -45,6 +48,7 @@ public class Home extends Fragment {
     }
 
     private void Sets() {
+        lottieAnimationView.playAnimation();
         coin_show.setText(Model_Current_User.coin);
         username_show.setText(Model_Current_User.username);
     }
@@ -68,6 +72,7 @@ public class Home extends Fragment {
         sandogh_gifts=view.findViewById(R.id.sandogh_home);
         coin_show=view.findViewById(R.id.coin_show);
         username_show=view.findViewById(R.id.username_show);
+        lottieAnimationView=view.findViewById(R.id.video_lottie);
     }
 
     private void Handle_sandogh_Animation(){
@@ -87,6 +92,9 @@ public class Home extends Fragment {
        if(scaleAnimation!=null){
             scaleAnimation.cancel();
         }
+       if(lottieAnimationView!=null){
+           lottieAnimationView.cancelAnimation();
+       }
 
     }
 
@@ -95,6 +103,7 @@ public class Home extends Fragment {
     public void onStart() {
         super.onStart();
         sandogh_gifts.startAnimation(scaleAnimation);
+        lottieAnimationView.playAnimation();
     }
 
 

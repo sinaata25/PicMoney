@@ -163,14 +163,21 @@
             android:gravity="center"
             android:layout_height="match_parent">
 
-            <ImageView
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/video_lottie"
                 android:layout_width="match_parent"
-                android:src="@drawable/video1"
-                android:id="@+id/video"
                 android:background="@drawable/cardstyle4"
-                android:padding="4dp"
-                android:layout_weight=".5"
-                android:layout_height="wrap_content"/>
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.498"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="videoshow.json"
+                app:lottie_loop="true" />
             <TextView
                 android:layout_width="match_parent"
                 android:textColor="@color/white"

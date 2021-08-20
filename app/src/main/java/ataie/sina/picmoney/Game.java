@@ -18,15 +18,18 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.os.PersistableBundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -35,8 +38,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.github.ybq.android.spinkit.sprite.Sprite;
-import com.github.ybq.android.spinkit.style.FoldingCube;
+
 import com.jackandphantom.blurimage.BlurImage;
 import com.mackhartley.roundedprogressbar.RoundedProgressBar;
 import com.squareup.picasso.Callback;
@@ -47,12 +49,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -64,9 +69,9 @@ import jp.wasabeef.picasso.transformations.BlurTransformation;
 public class Game extends AppCompatActivity {
     ImageView imageView;
     TextView one,two,three,four,tasvirx;
-    ProgressBar progressBar;
     int javab_selected=0;
     MediaPlayer mediaPlayer;
+    LinearLayout next_qus,extra_time;
     RoundedProgressBar progress;
     Timer timer;
     float progress_percent=100;
@@ -81,6 +86,9 @@ public class Game extends AppCompatActivity {
             setContentView(R.layout.game);
             SetupViews();
             Sets();
+        LottieAnimationView lottieAnimationView;
+        lottieAnimationView=findViewById(R.id.load_lottie);
+        lottieAnimationView.playAnimation();
             Handle_Javab();
     }
 
@@ -93,11 +101,10 @@ public class Game extends AppCompatActivity {
         three=findViewById(R.id.three);
         four=findViewById(R.id.four);
         tasvirx=findViewById(R.id.tasvirx);
-         progressBar =findViewById(R.id.spin_kit);
+        extra_time=findViewById(R.id.extra_time);
+        next_qus=findViewById(R.id.next_question_game);
          progress=findViewById(R.id.progressBar3);
          loading=findViewById(R.id.loading_page);
-         FoldingCube doubleBounce = new FoldingCube();
-        progressBar.setIndeterminateDrawable(doubleBounce);
         list=new ArrayList<>();
     }
 
@@ -114,6 +121,7 @@ public class Game extends AppCompatActivity {
                     int min = 1;
                     int max = num;
                     int random = new Random().nextInt((max - min) + 1) + min;
+                    random= check_javab_dade(random);
                     get_data_from_server(random);
                 }
             }
@@ -346,6 +354,17 @@ public class Game extends AppCompatActivity {
             }
         });
         ///////////////////////////////////
+        next_qus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.release();
+                timer.purge();
+                timer.cancel();
+                finish();
+                Intent intent=new Intent(getApplicationContext(),Game.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -388,7 +407,22 @@ public class Game extends AppCompatActivity {
 
 
 
+ int check_javab_dade(int rand){
 
+        if(Statics.list_game!=null){
+            for(int i=0;i<Statics.list_game.size();i++){
+                if(rand==Statics.list_game.get(i)){
+                    if(rand+1<=num){
+                        check_javab_dade(rand+1);
+                    }
+                }
+            }
+
+        }
+
+            Statics.list_game.add(rand);
+        return rand;
+ }
 
 
 

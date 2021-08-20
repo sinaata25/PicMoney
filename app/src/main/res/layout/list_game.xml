@@ -21,23 +21,23 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_height="match_parent">
+            android:layout_height="30dp">
             <TextView
                 android:layout_width="80dp"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:text=" 0"
                 android:textColor="@color/white"
                 android:id="@+id/show_coin_list"
                 android:fontFamily="@font/font1font"
-                android:gravity="center"
-                android:drawableLeft="@drawable/coin3"
+                android:gravity="center|top"
+                android:drawableLeft="@drawable/ic_macoin"
                 android:layout_height="wrap_content"/>
 
             <ImageView
-                android:layout_width="20dp"
-               android:layout_marginLeft="8dp"
+                android:layout_width="25dp"
+                android:layout_marginLeft="8dp"
                 android:src="@drawable/plus"
-                android:layout_height="30dp"/>
+                android:layout_height="40dp"/>
 
 
         </LinearLayout>
@@ -276,7 +276,7 @@
                                 android:gravity="center"
                                 android:textColor="@color/darkgreen"
                                 android:paddingRight="5dp"
-                                android:text="100 هزار تومان"
+                                android:text="100000 تومان"
                                 android:paddingLeft="5dp"
                                 android:layout_height="match_parent"/>
 
@@ -367,7 +367,7 @@
                                 android:gravity="center"
                                 android:paddingRight="5dp"
                                 android:textColor="@color/darkgreen"
-                                android:text="300 هزار تومان"
+                                android:text="300000 تومان"
                                 android:paddingLeft="5dp"
                                 android:layout_height="match_parent"/>
 
@@ -456,7 +456,7 @@
                                 android:gravity="center"
                                 android:paddingRight="5dp"
                                 android:textColor="@color/darkgreen"
-                                android:text="2میلیون تومان"
+                                android:text="2000000 تومان"
                                 android:paddingLeft="5dp"
                                 android:layout_height="match_parent"/>
 

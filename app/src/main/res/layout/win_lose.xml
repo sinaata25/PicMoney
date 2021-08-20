@@ -24,6 +24,7 @@
     android:background="@drawable/cardstyle1"
     android:paddingBottom="5dp"
     android:layout_height="match_parent">
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         app:cardBackgroundColor="#99340E77"
@@ -37,20 +38,20 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_height="match_parent">
+            android:layout_height="30dp">
             <TextView
                 android:layout_width="80dp"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:text=" 0"
                 android:textColor="@color/white"
                 android:id="@+id/show_coin_win"
                 android:fontFamily="@font/font1font"
-                android:gravity="center"
-                android:drawableLeft="@drawable/coin3"
+                android:gravity="center|top"
+                android:drawableLeft="@drawable/ic_macoin"
                 android:layout_height="wrap_content"/>
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
                 android:layout_marginLeft="8dp"
                 android:src="@drawable/plus"
                 android:layout_height="40dp"/>
@@ -131,6 +132,8 @@
                 android:layout_width="30dp"
                 android:src="@drawable/star"
                 android:layout_height="30dp"/>
+
+
         </LinearLayout>
 
     </LinearLayout>
@@ -149,6 +152,7 @@
             android:text="گزارش سوال"
             android:background="@drawable/cardstyle4"
             android:gravity="center"
+            android:visibility="gone"
             android:id="@+id/gozaresh_win"
             android:textColor="@color/white"
             android:fontFamily="@font/lalezarfont"
@@ -156,6 +160,18 @@
             android:layout_marginRight="5dp"
             android:layout_height="wrap_content"/>
 
+        <TextView
+            android:layout_width="150dp"
+            android:text="جدول برندگان"
+            android:background="@drawable/cardstyle4"
+            android:gravity="center"
+            android:visibility="visible"
+            android:id="@+id/jadval_win"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lalezarfont"
+            android:textSize="25dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"/>
         <TextView
             android:layout_width="150dp"
             android:text="سوال بعد"
@@ -224,20 +240,20 @@
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center"
-                    android:layout_height="match_parent">
+                    android:layout_height="30dp">
                     <TextView
                         android:layout_width="80dp"
-                        android:textSize="30dp"
+                        android:textSize="20dp"
                         android:text=" 0"
                         android:textColor="@color/white"
                         android:id="@+id/show_coin_lose"
                         android:fontFamily="@font/font1font"
                         android:gravity="center"
-                        android:drawableLeft="@drawable/coin3"
+                        android:drawableLeft="@drawable/ic_macoin"
                         android:layout_height="wrap_content"/>
 
                     <ImageView
-                        android:layout_width="30dp"
+                        android:layout_width="25dp"
                         android:layout_marginLeft="8dp"
                         android:src="@drawable/plus"
                         android:layout_height="40dp"/>
@@ -259,7 +275,8 @@
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_width="100dp"
-                    android:src="@drawable/gameover"
+                    android:src="@drawable/cry"
+                    android:layout_marginBottom="5dp"
                     android:layout_height="100dp"/>
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -320,13 +337,25 @@
                     android:text="گزارش سوال"
                     android:background="@drawable/cardstyle4"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:textColor="@color/white"
                     android:id="@+id/gozaresh_lose"
                     android:fontFamily="@font/lalezarfont"
                     android:textSize="25dp"
                     android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"/>
-
+                <TextView
+                    android:layout_width="150dp"
+                    android:text="جدول برندگان"
+                    android:background="@drawable/cardstyle4"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:id="@+id/jadval_lose"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/lalezarfont"
+                    android:textSize="25dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:layout_width="150dp"
                     android:text="بازگشت به منو"

@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import org.jetbrains.annotations.NotNull;
 
 import ataie.sina.picmoney.R;
@@ -17,6 +19,7 @@ import ataie.sina.picmoney.R;
 public class Dialog_Try_Network extends DialogFragment {
     View view;
     TextView textView;
+    LottieAnimationView lottieAnimationView;
      public static   Callback_Try callback_try;
     @Nullable
     @Override
@@ -40,6 +43,8 @@ public class Dialog_Try_Network extends DialogFragment {
 
     private void SetUpViews() {
      textView=view.findViewById(R.id.try_again);
+     lottieAnimationView=view.findViewById(R.id.eror_lottie);
+     lottieAnimationView.playAnimation();
     }
 
 
